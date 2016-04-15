@@ -1,0 +1,24 @@
+{
+  "name": "dropdown",
+  "version": "1.0.0",
+  "description": "处理 移入 &amp; 点击 展示 类效果",
+  "main": "jQuery.dropdown.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dissection/dropdown.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dissection/dropdown/issues"
+  },
+  "homepage": "https://github.com/dissection/dropdown#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.3"
+  }
+}
