@@ -6,11 +6,129 @@
     <link href="../base.css" rel="stylesheet">
     <link href="main.css" rel="stylesheet">
     <script src="../jquery.js"></script>
+    <script src="../src/dropdown.min.js"></script>
+    <!--<script src="../jQuery.dropdown.js"></script>-->
 </head>
 <body>
     <div class="tit mb20 mt20">
-        <h3>轮播图</h3>
+        <h3>移入显示</h3>
     </div>
+    <div class="dn dropdown_01">
+        <div class="dn-tit">选择</div>
+        <div class="dn-layer">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $(".dropdown_01").dropdown({
+            trigger:!0,
+            item:"dn-tit",
+            current:"hover"
+        })
+    </script>
+    <div class="tit mb20 mt20">
+        <h3>点击显示</h3>
+    </div>
+    <div class="dn dropdown_02">
+        <div class="dn-tit">选择</div>
+        <div class="dn-layer">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $(".dropdown_02").dropdown({
+            event:"click",
+            item:"dn-tit",
+            current:"hover"
+        })
+    </script>
+    <div class="tit mb20 mt20">
+        <h3>移入展示通过回调处理</h3>
+    </div>
+    <div class="dn dropdown_03">
+        <div class="dn-tit">选择</div>
+        <div class="dn-layer" data-idx="0">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $(".dropdown_03").dropdown({
+            item:"dn-tit",
+            current:"active",
+            onchange:function($item){
+                $(".dropdown_03").find(".dn-layer").show()
+            },
+            onmouseleave:function(){
+                $(".dropdown_03").find(".dn-layer").hide()
+            }
 
+        })
+    </script>
+
+    <div class="tit mb20 mt20">
+        <h3>切换显示</h3>
+    </div>
+    <div class="dn dropdown_04">
+        <div class="clearfix">
+            <div class="dn-tit fl" data-idx="0">选择1</div>
+            <div class="dn-tit fl" data-idx="1">选择2</div>
+            <div class="dn-tit fl" data-idx="2">选择3</div>
+        </div>
+        <div class="dn-layer" data-idx="0" >
+            <ul>
+                <li>0</li>
+                <li>0</li>
+                <li>0</li>
+            </ul>
+        </div>
+        <div class="dn-layer" data-idx="1">
+            <ul>
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+            </ul>
+        </div>
+        <div class="dn-layer" data-idx="2">
+            <ul>
+                <li>2</li>
+                <li>2</li>
+                <li>2</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $(".dropdown_04").dropdown({
+            item:"dn-tit",
+            current:"active",
+            onchange:function($item){
+                var i = $item.attr("data-idx");
+                $(".dropdown_04").find('.dn-layer').hide()
+//                $(".dropdown_04").find('.dn-layer').eq(i).show();
+                $(".dropdown_04").find('.dn-layer').each(function(){
+                    var j=$(this).attr("data-idx")
+                    if(i== j){
+                        $(this).show()
+                        return true
+                    }
+                })
+            },
+            onmouseleave:function(){
+                $(".dropdown_04").find(".dn-layer").hide()
+            }
+
+        })
+    </script>
 </body>
 </html>

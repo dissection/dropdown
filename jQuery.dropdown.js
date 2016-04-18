@@ -20,7 +20,7 @@
         //bodyClass: "ui-dropdown-bd",
         enterDelay: 0,
         leaveDelay: 0,
-        zIndex: 1e3,
+        //zIndex: 1e3,
         event:"mouseenter",
         onchange: null ,
         onmouseleave: null // 鼠标离开的回调函数
