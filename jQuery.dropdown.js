@@ -22,6 +22,7 @@
         leaveDelay: 0,
         //zIndex: 1e3,
         event:"mouseenter",
+        onbefore:null,
         onchange: null ,
         onmouseleave: null // 鼠标离开的回调函数
     };
@@ -48,6 +49,7 @@
         _this.item.on(_op.event, function() {
             var $item = $(this);
             var changefnc= function() {
+                _op.onbefore && _op.onbefore($item)
                 _this.el.addClass(_op.current),
                 _op.onchange && _op.onchange($item)
             };
@@ -88,6 +90,7 @@
             //移入当前 执行的函数
             var changefnc= function(){
                 itemSate = !0,
+                _op.onbefore && _op.onbefore($item)
                     _this.removeClass(),
                     $item.addClass(_op.current),
                     elStatr = !0,

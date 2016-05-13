@@ -47,7 +47,10 @@
         $(".dropdown_02").dropdown({
             event:"click",
             item:"dn-tit",
-            current:"hover"
+            current:"hover",
+            onchange:function () {
+                console.log("aaaa")
+            }
         })
     </script>
     <div class="tit mb20 mt20">
