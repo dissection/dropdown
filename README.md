@@ -26,6 +26,10 @@
     移入事件 和 点击事件
 [`default`] mouseenter    
 
+**onbefore** [`function`]  
+    在触发 事件 清除其他 之前执行的 函数  
+[`default`] null  
+
 **onchange** [`function`]  
     改变时触发  
 [`default`] null  
